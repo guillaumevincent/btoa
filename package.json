@@ -1,0 +1,41 @@
+{
+  "name": "@oslab/btoa",
+  "version": "0.1.0",
+  "description": "btoa for node and browser",
+  "keywords": [
+    "btoa",
+    "browser",
+    "node"
+  ],
+  "license": "MIT",
+  "author": "Guillaume Vincent <guillaume@oslab.fr>",
+  "main": "node-btoa.js",
+  "browser": "browser-btoa.js",
+  "bin": {
+    "btoa": "bin/btoa.js"
+  },
+  "repository": "guillaumevincent/btoa",
+  "scripts": {
+    "precommit": "npm test && lint-staged",
+    "test": "npm run test:unit && npm run test:browser",
+    "test:unit": "mocha test",
+    "test:browser": "karma start karma.conf.js"
+  },
+  "devDependencies": {
+    "browserify": "^16.1.1",
+    "karma": "^2.0.0",
+    "karma-browserify": "^5.2.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-firefox-launcher": "^1.0.1",
+    "karma-mocha": "^1.3.0",
+    "lint-staged": "^7.0.0",
+    "mocha": "^5.0.5",
+    "prettier": "^1.2.2"
+  },
+  "lint-staged": {
+    "{src,test}/**/*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
